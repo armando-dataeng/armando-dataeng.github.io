@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Portafolio profesional de Armando E. Marrero: Ingeniería de Datos, modelado, ETL/ELT, Data Warehousing e Inteligencia Organizacional.">
+  <title>Armando E. Marrero | Data Engineering & Organizational Intelligence</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1220;
+      --surface: #111c2e;
+      --surface-soft: #152238;
+      --text: #edf4ff;
+      --muted: #a8b7cc;
+      --accent: #55e0c1;
+      --accent-2: #8cbcff;
+      --border: rgba(174, 198, 228, .17);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 85% 5%, rgba(42, 118, 155, .18), transparent 34rem),
+        radial-gradient(ellipse at 0% 35%, rgba(55, 91, 150, .13), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
+    .container { width: min(var(--max), calc(100% - 2.5rem)); margin-inline: auto; }
+    .topbar { border-bottom: 1px solid var(--border); background: rgba(11, 18, 32, .78); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; font-weight: 750; letter-spacing: -.02em; }
+    .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #071421; font-size: .9rem; font-weight: 900; }
+    .nav-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .92rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .hero { padding: clamp(4.5rem, 10vw, 8rem) 0 5rem; }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 800; }
+    h1 { max-width: 850px; margin: 1rem 0; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.04; letter-spacing: -.055em; }
+    h1 span { color: var(--accent); }
+    .hero-copy { max-width: 720px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.2rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 2rem; }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: .5rem; padding: .8rem 1.15rem; border: 1px solid var(--border); border-radius: 10px; text-decoration: none; font-weight: 750; transition: transform .18s ease, border-color .18s ease; }
+    .button:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .button.primary { background: var(--accent); color: #071421; border-color: var(--accent); }
+    section { padding: 4.5rem 0; }
+    .section-heading { margin-bottom: 2rem; max-width: 760px; }
+    .section-heading h2 { margin: .45rem 0 .65rem; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.04em; line-height: 1.15; }
+    .section-heading p { margin: 0; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .card { min-width: 0; padding: 1.5rem; background: linear-gradient(145deg, rgba(21, 34, 56, .96), rgba(17, 28, 46, .9)); border: 1px solid var(--border); border-radius: 18px; }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1rem; }
+    .icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 13px; background: rgba(85, 224, 193, .1); color: var(--accent); font-size: 1.25rem; }
+    .tag { color: var(--accent-2); border: 1px solid rgba(140, 188, 255, .25); background: rgba(140, 188, 255, .07); border-radius: 999px; padding: .25rem .6rem; font-size: .72rem; font-weight: 750; white-space: nowrap; }
+    .card h3 { margin: 0 0 .5rem; font-size: 1.2rem; letter-spacing: -.02em; }
+    .card p { color: var(--muted); margin: 0 0 1.1rem; }
+    .card-link { display: inline-flex; gap: .4rem; color: var(--accent); text-decoration: none; font-weight: 750; }
+    .card-link:hover { text-decoration: underline; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: .65rem; padding: 0; margin: 1.5rem 0 0; list-style: none; }
+    .pill-list li { padding: .5rem .8rem; border: 1px solid var(--border); background: rgba(17, 28, 46, .8); color: #d5e4f7; border-radius: 9px; font-size: .9rem; }
+    .split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 2rem; align-items: start; }
+    .note { border-left: 3px solid var(--accent); padding: .25rem 0 .25rem 1.1rem; color: var(--muted); }
+    .contact-panel { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; padding: clamp(1.5rem, 4vw, 2.5rem); border: 1px solid var(--border); border-radius: 20px; background: linear-gradient(120deg, rgba(85, 224, 193, .08), rgba(140, 188, 255, .08)); }
+    .contact-panel h2 { margin: 0 0 .4rem; font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -.04em; }
+    .contact-panel p { margin: 0; color: var(--muted); }
+    footer { margin-top: 4rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .88rem; }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .75rem; padding: 1.5rem 0; }
+    @media (max-width: 720px) {
+      .nav { align-items: flex-start; flex-direction: column; justify-content: center; padding: 1rem 0; }
+      .nav-links { gap: .85rem 1rem; }
+      .grid, .split { grid-template-columns: 1fr; }
+      .hero { padding-top: 4rem; }
+      section { padding: 3.5rem 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="container nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Armando E. Marrero, inicio">
+        <span class="brand-mark" aria-hidden="true">AM</span>
+        <span>Armando E. Marrero</span>
+      </a>
+      <div class="nav-links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#enfoque">Enfoque</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="inicio">
+      <p class="eyebrow">Portafolio profesional · Data &amp; Analytics</p>
+      <h1>Transformando <span>datos</span> en decisiones.</h1>
+      <p class="hero-copy">
+        Soy Armando E. Marrero y estoy desarrollando mi camino en Ingeniería de Datos e
+        Inteligencia Organizacional. Me interesa construir bases de datos bien diseñadas,
+        procesos de integración confiables y análisis que ayuden a tomar mejores decisiones.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="#proyectos">Explorar proyectos <span aria-hidden="true">↓</span></a>
+        <a class="button" href="https://github.com/armando-dataeng" target="_blank" rel="noopener noreferrer">Ver mi GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="container" id="sobre-mi">
+      <div class="section-heading">
+        <p class="eyebrow">01 / Perfil</p>
+        <h2>Ingeniería de datos con visión de negocio</h2>
+        <p>Mi objetivo es conectar la parte técnica de los datos con su valor para las personas y las organizaciones.</p>
+      </div>
+      <div class="split">
+        <div>
+          <p>
+            Estoy construyendo una base práctica en SQL, diseño y modelado de datos,
+            procesos ETL/ELT y arquitectura de data warehouses. Este portafolio reúne mis
+            rutas de aprendizaje y trabajos en evolución, con espacio para documentar
+            soluciones, decisiones técnicas y resultados a medida que avance.
+          </p>
+          <p>
+            Además de mover y organizar datos, me interesa cómo convertirlos en indicadores,
+            métricas y conocimiento útil para mejorar procesos y apoyar decisiones.
+          </p>
+        </div>
+        <div class="note">
+          <strong>Mi enfoque</strong><br>
+          Datos confiables · Modelos claros · Procesos reproducibles · Métricas accionables
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="proyectos">
+      <div class="section-heading">
+        <p class="eyebrow">02 / Repositorios</p>
+        <h2>Proyectos y rutas de desarrollo</h2>
+        <p>Una selección de repositorios que documentan las áreas que estoy estudiando y desarrollando. Los iré ampliando con ejercicios, casos prácticos y entregables.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-top"><span class="icon" aria-hidden="true">⌘</span><span class="tag">SQL</span></div>
+          <h3>SQL Roadmap</h3>
+          <p>Ruta de aprendizaje para reforzar consultas, transformación de datos y fundamentos de SQL.</p>
+          <a class="card-link" href="https://github.com/armando-dataeng/SQL-roadmap" target="_blank" rel="noopener noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="icon" aria-hidden="true">◇</span><span class="tag">Database Design</span></div>
+          <h3>Database Design Roadmap</h3>
+          <p>Fundamentos de diseño de bases de datos, estructura de esquemas y organización de información.</p>
+          <a class="card-link" href="https://github.com/armando-dataeng/database-design-roadmap" target="_blank" rel="noopener noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="icon" aria-hidden="true">▦</span><span class="tag">Data Modeling</span></div>
+          <h3>Data Modeling</h3>
+          <p>Material de trabajo relacionado con el modelado de datos y la representación de entidades y relaciones.</p>
+          <a class="card-link" href="https://github.com/armando-dataeng/Data-Modeling" target="_blank" rel="noopener noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="icon" aria-hidden="true">⇄</span><span class="tag">ETL / ELT</span></div>
+          <h3>ETL / ELT Roadmap</h3>
+          <p>Conceptos y etapas para extraer, transformar y cargar datos mediante procesos de integración.</p>
+          <a class="card-link" href="https://github.com/armando-dataeng/etl-elt-roadmap" target="_blank" rel="noopener noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="icon" aria-hidden="true">▤</span><span class="tag">Data Warehouse</span></div>
+          <h3>Data Warehouse Design</h3>
+          <p>Ruta de desarrollo enfocada en conceptos de almacenes de datos y organización analítica.</p>
+          <a class="card-link" href="https://github.com/armando-dataeng/data-warehouse-design-roadmap" target="_blank" rel="noopener noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="icon" aria-hidden="true">◎</span><span class="tag">Exploración</span></div>
+          <h3>Más proyectos en GitHub</h3>
+          <p>Consulta el perfil para ver otros repositorios, experimentos y avances de mi aprendizaje.</p>
+          <a class="card-link" href="https://github.com/armando-dataeng" target="_blank" rel="noopener noreferrer">Visitar perfil <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="enfoque">
+      <div class="section-heading">
+        <p class="eyebrow">03 / Áreas de interés</p>
+        <h2>Mi stack en construcción</h2>
+        <p>Estas son las áreas que guían mi desarrollo profesional. La lista refleja mi enfoque de aprendizaje, no una certificación de dominio en cada herramienta.</p>
+      </div>
+      <ul class="pill-list" aria-label="Áreas técnicas">
+        <li>SQL</li><li>Python</li><li>Linux</li><li>Git &amp; GitHub</li>
+        <li>Database Design</li><li>Data Modeling</li><li>ETL / ELT</li>
+        <li>Data Warehousing</li><li>Data Quality</li><li>Orchestration</li>
+        <li>Cloud Data Platforms</li><li>Analytics &amp; KPIs</li>
+      </ul>
+      <div class="split" style="margin-top:2.5rem">
+        <div>
+          <h3>Inteligencia Organizacional</h3>
+          <p>Me interesa convertir los datos en indicadores que ayuden a entender el desempeño, identificar oportunidades y dar seguimiento a objetivos.</p>
+        </div>
+        <div>
+          <h3>Cómo quiero trabajar</h3>
+          <p>Documentar el proceso, cuidar la calidad de los datos, explicar las decisiones y priorizar soluciones que puedan mantenerse y evolucionar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="contacto">
+      <div class="contact-panel">
+        <div>
+          <p class="eyebrow">04 / Conectemos</p>
+          <h2>Construyendo, aprendiendo y compartiendo.</h2>
+          <p>Explora mis repositorios para seguir mis avances en Ingeniería de Datos.</p>
+        </div>
+        <a class="button primary" href="https://github.com/armando-dataeng" target="_blank" rel="noopener noreferrer">Contactar por GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Armando E. Marrero</span>
+      <span>Data Engineering · Organizational Intelligence</span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
