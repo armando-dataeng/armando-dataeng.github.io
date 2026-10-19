@@ -42,6 +42,9 @@
     .nav-links a { color: var(--muted); text-decoration: none; font-size: .92rem; }
     .nav-links a:hover { color: var(--accent); }
     .hero { padding: clamp(4.5rem, 10vw, 8rem) 0 5rem; }
+    .hero-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(230px, .8fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); }
+    .hero-content { min-width: 0; }
+    .profile-photo { display: block; width: min(100%, 340px); aspect-ratio: 1; object-fit: cover; object-position: center 28%; justify-self: end; border: 1px solid var(--border); border-radius: 28px; box-shadow: 0 24px 70px rgba(0, 0, 0, .28); background: var(--surface); }
     .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 800; }
     h1 { max-width: 850px; margin: 1rem 0; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.04; letter-spacing: -.055em; }
     h1 span { color: var(--accent); }
@@ -70,12 +73,17 @@
     .contact-panel { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; padding: clamp(1.5rem, 4vw, 2.5rem); border: 1px solid var(--border); border-radius: 20px; background: linear-gradient(120deg, rgba(85, 224, 193, .08), rgba(140, 188, 255, .08)); }
     .contact-panel h2 { margin: 0 0 .4rem; font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -.04em; }
     .contact-panel p { margin: 0; color: var(--muted); }
+    .video-shell { width: 100%; overflow: hidden; border: 1px solid var(--border); border-radius: 18px; background: #050a12; box-shadow: 0 24px 70px rgba(0,0,0,.22); }
+    .video-shell iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+    .video-caption { margin-top: .9rem; color: var(--muted); font-size: .92rem; }
     footer { margin-top: 4rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .88rem; }
     .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .75rem; padding: 1.5rem 0; }
     @media (max-width: 720px) {
       .nav { align-items: flex-start; flex-direction: column; justify-content: center; padding: 1rem 0; }
       .nav-links { gap: .85rem 1rem; }
-      .grid, .split { grid-template-columns: 1fr; }
+      .grid, .split, .hero-layout { grid-template-columns: 1fr; }
+      .profile-photo { justify-self: start; width: min(78%, 300px); }
+      .hero-layout { gap: 2rem; }
       .hero { padding-top: 4rem; }
       section { padding: 3.5rem 0; }
     }
@@ -94,9 +102,12 @@
       </a>
       <div class="nav-links">
         <a href="#sobre-mi">Sobre mí</a>
+        <a href="#video">Video</a>
+        <a href="#sobre-mi">Sobre mí</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#certificaciones">Certificaciones</a>
         <a href="#enfoque">Enfoque</a>
+        <a href="#cv">CV</a>
         <a href="#contacto">Contacto</a>
       </div>
     </nav>
@@ -104,17 +115,35 @@
 
   <main>
     <section class="hero container" id="inicio">
-      <p class="eyebrow">Portafolio profesional · Data Engineer &amp; Analytics</p>
-      <h1>Transformando <span>datos</span> en decisiones inteligentes.</h1>
-      <p class="hero-copy">
-        Soy Armando E. Marrero y estoy desarrollando mi camino en Ingeniería de Datos e
-        Inteligencia Organizacional. Me interesa construir bases de datos bien diseñadas,
-        procesos de integración confiables y análisis de datos que ayuden a tomar mejores decisiones.
-      </p>
-      <div class="actions">
-        <a class="button primary" href="#proyectos">Explorar proyectos <span aria-hidden="true">↓</span></a>
-        <a class="button" href="https://github.com/armando-dataeng" target="_blank" rel="noopener noreferrer">Ver mi GitHub <span aria-hidden="true">↗</span></a>
+      <div class="hero-layout">
+        <div class="hero-content">
+          <p class="eyebrow">Portafolio profesional · Data Engineer &amp; Analytics</p>
+          <h1>Transformando <span>datos</span> en decisiones inteligentes.</h1>
+          <p class="hero-copy">
+            Soy Armando E. Marrero y estoy desarrollando mi camino en Ingeniería de Datos e
+            Inteligencia Organizacional. Me interesa construir bases de datos bien diseñadas,
+            procesos de integración confiables y análisis de datos que ayuden a tomar mejores decisiones.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#proyectos">Explorar proyectos <span aria-hidden="true">↓</span></a>
+            <a class="button" href="#video">Ver presentación <span aria-hidden="true">▶</span></a>
+            <a class="button" href="cv.html">Ver CV <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <img class="profile-photo" src="assets/foto-perfil.webp" alt="Fotografía de perfil de Armando Enrique Marrero" width="420" height="420" fetchpriority="high">
       </div>
+    </section>
+
+    <section class="container" id="video">
+      <div class="section-heading">
+        <p class="eyebrow">Presentación</p>
+        <h2>Conoce un poco más sobre mí</h2>
+        <p>Video de presentación profesional y recorrido por mi perfil.</p>
+      </div>
+      <div class="video-shell">
+        <iframe src="https://www.youtube-nocookie.com/embed/Bvd5bm-PPcw" title="Video de presentación de Armando E. Marrero" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="video-caption">También puedes <a href="https://youtu.be/Bvd5bm-PPcw" target="_blank" rel="noopener noreferrer">ver el video directamente en YouTube</a>.</p>
     </section>
 
     <section class="container" id="sobre-mi">
@@ -197,9 +226,19 @@
       </div>
       <div class="grid">
         <article class="card">
-          <div class="card-top"><span class="icon" aria-hidden="true">✧</span><span class="tag">Sección preparada</span></div>
-          <h3>Próximamente</h3>
-          <p>Este espacio se actualizará con las certificaciones obtenidas, incluyendo la entidad emisora, la fecha y un enlace para verificar cada credencial. No se muestran certificaciones hasta contar con sus datos.</p>
+          <div class="card-top"><span class="icon" aria-hidden="true">⌘</span><span class="tag">ITLA · 64 horas</span></div>
+          <h3>Diplomado en SQL Server</h3>
+          <p>Instituto Tecnológico de Las Américas (ITLA). Formación en consultas SQL, diseño y programación de bases de datos y procedimientos almacenados. Febrero de 2025.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="icon" aria-hidden="true">▦</span><span class="tag">ITLA · 40 horas</span></div>
+          <h3>Manejo de Bases de Datos con Excel</h3>
+          <p>Instituto Tecnológico de Las Américas (ITLA). Organización y gestión de bases de datos, limpieza y transformación de información y análisis con Excel. Junio de 2025.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="icon" aria-hidden="true">◎</span><span class="tag">MESCyT · 830 horas</span></div>
+          <h3>Inglés de Inmersión para la Competitividad</h3>
+          <p>Universidad Central del Este (UCE), programa de inmersión para la competitividad del MESCyT. Diciembre de 2022.</p>
         </article>
       </div>
     </section>
@@ -228,10 +267,21 @@
       </div>
     </section>
 
+    <section class="container" id="cv">
+      <div class="contact-panel">
+        <div>
+          <p class="eyebrow">05 / Perfil profesional</p>
+          <h2>Consulta mi CV</h2>
+          <p>Formación, habilidades técnicas y proyectos descritos en una página preparada para imprimir o guardar como PDF.</p>
+        </div>
+        <a class="button primary" href="cv.html">Abrir CV <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
     <section class="container" id="contacto">
       <div class="contact-panel">
         <div>
-          <p class="eyebrow">05 / Conectemos</p>
+          <p class="eyebrow">06 / Conectemos</p>
           <h2>Construyendo, aprendiendo y compartiendo.</h2>
           <p>Explora mis repositorios para seguir mis avances en Ingeniería de Datos.</p>
         </div>

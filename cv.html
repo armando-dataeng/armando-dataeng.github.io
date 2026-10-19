@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Currículum de Armando Enrique Marrero, perfil junior de Ingeniería de Datos y Administración de Bases de Datos.">
+  <title>CV | Armando Enrique Marrero</title>
+  <style>
+    :root { --ink:#172337; --muted:#526176; --accent:#087e78; --line:#dce4ec; --paper:#fff; --soft:#f3f7fa; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#e9eef3; color:var(--ink); font:15px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif; }
+    .toolbar { max-width:960px; margin:24px auto 12px; padding:0 24px; display:flex; justify-content:space-between; gap:12px; align-items:center; }
+    .toolbar a,.toolbar button { color:var(--ink); border:1px solid #c8d3df; border-radius:9px; padding:10px 14px; background:#fff; text-decoration:none; font:inherit; font-weight:700; cursor:pointer; }
+    .sheet { max-width:960px; margin:0 auto 40px; padding:44px 52px; background:var(--paper); box-shadow:0 18px 55px rgba(22,40,60,.12); }
+    header { padding-bottom:22px; border-bottom:3px solid var(--accent); }
+    h1 { margin:0; font-size:clamp(30px,5vw,42px); line-height:1.1; letter-spacing:-.04em; }
+    .role { margin:8px 0 12px; color:var(--accent); font-weight:800; letter-spacing:.03em; text-transform:uppercase; font-size:13px; }
+    .contact { display:flex; flex-wrap:wrap; gap:6px 16px; color:var(--muted); font-size:13px; }
+    a { color:var(--accent); overflow-wrap:anywhere; }
+    section { margin-top:24px; }
+    h2 { margin:0 0 12px; padding-bottom:7px; border-bottom:1px solid var(--line); color:var(--accent); text-transform:uppercase; letter-spacing:.1em; font-size:13px; }
+    h3 { margin:0; font-size:16px; }
+    p { margin:6px 0 0; }
+    .item { margin:0 0 16px; break-inside:avoid; }
+    .meta { margin-top:2px; color:var(--muted); font-size:13px; }
+    ul { margin:7px 0 0; padding-left:20px; }
+    li { margin:3px 0; }
+    .skills { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .skill-group { padding:12px 14px; border-radius:10px; background:var(--soft); break-inside:avoid; }
+    .skill-group strong { display:block; margin-bottom:3px; }
+    .footer-note { color:var(--muted); font-size:12px; margin-top:24px; }
+    @media(max-width:650px) { .sheet { padding:28px 22px; margin:0 10px 20px; } .toolbar { margin-top:12px; } .skills { grid-template-columns:1fr; } }
+    @media print {
+      @page { size:A4; margin:14mm; }
+      body { background:#fff; font-size:10.5pt; }
+      .toolbar { display:none; }
+      .sheet { max-width:none; margin:0; padding:0; box-shadow:none; }
+      header, section, .item, .skill-group { break-inside:avoid; }
+      a { color:inherit; text-decoration:none; }
+      .skill-group { background:#f5f7f9 !important; print-color-adjust:exact; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <a href="index.html">← Volver al portafolio</a>
+    <button type="button" onclick="window.print()">Imprimir / Guardar como PDF</button>
+  </div>
+  <main class="sheet">
+    <header>
+      <h1>Armando Enrique Marrero</h1>
+      <p class="role">Ingeniero de Datos Jr. | Administrador de Bases de Datos Jr.</p>
+      <div class="contact">
+        <a href="mailto:ing.marrero12@gmail.com">ing.marrero12@gmail.com</a>
+        <a href="tel:+18099647092">809-964-7092</a>
+        <a href="https://www.linkedin.com/in/armando-enrique-marrero-15666529b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/armando-dataeng" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Resumen profesional</h2>
+      <p>Estudiante de tecnología orientado a la Ingeniería de Datos y Administración de Bases de Datos. Poseo conocimientos en SQL, modelado de datos, ETL/ELT, Python y Power BI. He desarrollado proyectos de bases de datos, APIs y automatización de procesos, aplicando buenas prácticas de calidad y organización de datos.</p>
+    </section>
+
+    <section>
+      <h2>Experiencia técnica y proyectos</h2>
+      <article class="item">
+        <h3>API y base de datos bancaria — Proyecto Banco Estudiantil</h3>
+        <p class="meta">SQL Server · .NET 8 · Entity Framework Core · 2026</p>
+        <ul>
+          <li>Diseño de una base de datos relacional para gestionar usuarios, clientes, cuentas y transacciones.</li>
+          <li>Desarrollo de una API REST con operaciones CRUD, autenticación y generación de reportes.</li>
+          <li>Implementación de procedimientos almacenados, claves foráneas y validaciones de reglas financieras.</li>
+          <li>Documentación y pruebas de endpoints mediante Swagger.</li>
+        </ul>
+      </article>
+      <article class="item">
+        <h3>Diseño de base de datos para sistema de ventas — Cafetería</h3>
+        <p class="meta">SQL · 2026</p>
+        <ul>
+          <li>Diseño del modelo conceptual, lógico y físico para gestionar ventas.</li>
+          <li>Definición de entidades para transacciones, detalles de venta, productos, categorías, personal y ubicaciones.</li>
+          <li>Implementación de relaciones, claves primarias, claves foráneas y restricciones de integridad.</li>
+          <li>Preparación de la estructura para consultas, reportes y análisis de ventas.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Competencias y herramientas</h2>
+      <div class="skills">
+        <div class="skill-group"><strong>Bases de datos</strong>Oracle SQL, SQL Server, PostgreSQL, MySQL, SQLite; administración y diseño de bases de datos.</div>
+        <div class="skill-group"><strong>Ingeniería de datos</strong>ETL/ELT, pipelines de datos, Data Warehouse, Data Lake, calidad y validación de datos.</div>
+        <div class="skill-group"><strong>Programación y procesamiento</strong>Python, Apache Airflow, PySpark, Power Query.</div>
+        <div class="skill-group"><strong>Modelado y analítica</strong>Modelado relacional y dimensional, Power BI, consultas y reportes.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Formación académica</h2>
+      <article class="item">
+        <h3>Universidad del Caribe (UNICARIBE)</h3>
+        <p class="meta">Ingeniería de Datos e Inteligencia Organizacional · Junio de 2024 – Actualidad</p>
+        <p>Formación orientada a bases de datos, programación, estadística, redes y sistemas de información. Proyectos académicos relacionados con SQL, APIs, modelado de datos y automatización de procesos.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Certificaciones y formación complementaria</h2>
+      <article class="item">
+        <h3>Diplomado en SQL Server — ITLA</h3>
+        <p class="meta">64 horas · Febrero de 2025</p>
+        <p>Consultas SQL, diseño y programación de bases de datos y procedimientos almacenados.</p>
+      </article>
+      <article class="item">
+        <h3>Manejo de Bases de Datos con Excel — ITLA</h3>
+        <p class="meta">40 horas · Junio de 2025</p>
+        <p>Organización y gestión de bases de datos, limpieza y transformación de información y análisis con Excel.</p>
+      </article>
+      <article class="item">
+        <h3>Inglés de Inmersión para la Competitividad — MESCyT / UCE</h3>
+        <p class="meta">830 horas · Diciembre de 2022</p>
+      </article>
+    </section>
+    <p class="footer-note">Versión web del CV basada en el documento compartido. Para generar una copia PDF, usa “Imprimir / Guardar como PDF” en la parte superior.</p>
+  </main>
+</body>
+</html>
